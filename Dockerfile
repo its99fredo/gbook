@@ -10,6 +10,6 @@ RUN mvn package -DskipTests
 FROM amazoncorretto:21.0.8
 
 WORKDIR /guest-book
-COPY --from=builder /usr/src/gbook/target/gbook-0.0.1-SNAPSHOT.jar .
+COPY --from=builder /usr/src/guest-book/target/gbook-0.0.1-SNAPSHOT.jar .
 
-ENTRYPOINT ["java", "-jar", "/gbook/gbook-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/guest-book/gbook-0.0.1-SNAPSHOT.jar"]
